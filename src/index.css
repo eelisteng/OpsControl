@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Space Grotesk", ui-monospace, SFMono-Regular, monospace;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+
+  /* Sophisticated Dark Brand Colors */
+  --color-surface: #0A0A0B;
+  --color-surface-dim: #050505;
+  --color-surface-bright: #121214;
+  --color-surface-container-lowest: #0D0D0F;
+  --color-surface-container-low: rgba(255, 255, 255, 0.02);
+  --color-surface-container: rgba(255, 255, 255, 0.05);
+  --color-surface-container-high: rgba(255, 255, 255, 0.08);
+  --color-surface-container-highest: rgba(255, 255, 255, 0.1);
+  --color-on-surface: #D1D1D1;
+  --color-on-surface-variant: #71717A;
+  --color-inverse-surface: #D4AF37;
+  --color-inverse-on-surface: #000000;
+  --color-outline: #71717A;
+  --color-outline-variant: rgba(255, 255, 255, 0.1);
+  --color-surface-tint: #D4AF37;
+  
+  --color-primary: #D4AF37;
+  --color-on-primary: #000000;
+  --color-primary-container: rgba(212, 175, 55, 0.1);
+  --color-on-primary-container: #D4AF37;
+  
+  --color-inverse-primary: #0A0A0B;
+  
+  --color-secondary: #71717A;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: rgba(255, 255, 255, 0.05);
+  --color-on-secondary-container: #ffffff;
+  
+  --color-tertiary: #ffffff;
+  --color-on-tertiary: #000000;
+  --color-tertiary-container: rgba(255, 255, 255, 0.1);
+  --color-on-tertiary-container: #ffffff;
+  
+  --color-error: #ef4444;
+  --color-on-error: #ffffff;
+  --color-error-container: rgba(239, 68, 68, 0.1);
+  --color-on-error-container: #ef4444;
+  
+  --color-background: #0A0A0B;
+  --color-on-background: #D1D1D1;
+
+  --color-status-success-bg: rgba(16, 185, 129, 0.1);
+  --color-status-success-text: #10b981;
+  --color-status-warning-bg: rgba(212, 175, 55, 0.1);
+  --color-status-warning-text: #D4AF37;
+  --color-status-error-bg: rgba(239, 68, 68, 0.1);
+  --color-status-error-text: #ef4444;
+
+  --spacing-base: 4px;
+  --spacing-container: 24px;
+  --spacing-gutter: 16px;
+  --spacing-card: 20px;
+  --spacing-stack: 12px;
+}
+
+@layer base {
+  .light {
+    --color-surface: #FFFFFF;
+    --color-surface-dim: #FAFAFA;
+    --color-surface-bright: #FFFFFF;
+    --color-surface-container-lowest: #F4F4F5;
+    --color-surface-container-low: #E4E4E7;
+    --color-surface-container: #D4D4D8;
+    --color-surface-container-high: #A1A1AA;
+    --color-surface-container-highest: #71717A;
+    --color-on-surface: #18181B;
+    --color-on-surface-variant: #52525B;
+    --color-inverse-surface: #000000;
+    --color-inverse-on-surface: #D4AF37;
+    --color-outline: #A1A1AA;
+    --color-outline-variant: #E4E4E7;
+    
+    --color-primary: #B38F24;
+    --color-on-primary: #FFFFFF;
+    --color-primary-container: rgba(212, 175, 55, 0.15);
+    --color-on-primary-container: #B38F24;
+    
+    --color-background: #F4F4F5;
+    --color-on-background: #18181B;
+  }
+}
+
+@layer utilities {
+  .text-h1 {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 36px;
+    color: var(--color-on-background);
+  }
+  .text-h2 {
+    font-family: var(--font-serif);
+    font-size: 22px;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 28px;
+    color: var(--color-on-background);
+  }
+  .text-h3 {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .text-body-md {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+  .text-body-sm {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+  }
+  .text-label-caps {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .text-mono-data {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 16px;
+    opacity: 0.9;
+  }
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-on-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dark body {
+  background: radial-gradient(circle at top left, #121214, #0A0A0B);
+}
+
+/* Custom Scrollbar for inner components */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-outline-variant);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-outline);
+}
